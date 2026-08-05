@@ -13,7 +13,12 @@ server.use(cors)
 //LISTAR TODOS AS MATERIAS
 //localhost:3003/materias
 server.get('/materias', (req, res) => {
-    const sql = 'SELECT * FROM materias';
+    const sql = `SELECT m.id_materia, m.nome_materia, 
+                m.id_professor_materias, p.nome_professor 
+                FROM materias m
+                join professores p 
+                on m.id_professor_materias = p.id_professor`;
+                
     connection.query(sql , (erro , resultados) => {
         if(erro){
             return res.status(500).json({erro: erro.message});

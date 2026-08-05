@@ -81,12 +81,19 @@ header nav a{
 
 /* ESTILIZAÇÃO PARA A PÁGINA DOS PROFESSORES*/
 
+#main-functions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    
+}
+
 .image-with-buttons{
     background-color: #035D74;
-    margin-top: 10vh;
     border-radius:12px;
     padding: 30px;
     max-width: 30vw;
+    box-sizing: border-box;
 }
 
 .image-with-buttons img{
@@ -96,7 +103,7 @@ header nav a{
 }
 
 .image-with-buttons button{
-    background-color: #96E8FC;
+    background: #EDECEA;
     border: none;
     display: block;
     margin-bottom: 3vh;
@@ -104,6 +111,45 @@ header nav a{
     width: 100%;
     border-radius: 8px;
 }
+
+#list-of-subjects{
+    background-color: #035D74;
+    border-radius:12px;
+    padding: 30px;
+    max-width: 30vw;
+    box-sizing: border-box;
+
+}
+
+#list-of-subjects h2{
+    color:#EDECEA;
+    text-align: center;
+    font-size: 48px;
+}
+
+#list-of-subjects .subject{
+    display: flex;
+    background-color: #EDECEA;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+#list-of-subjects .subject img{
+    width: 100px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#list-of-subjects .subject-description{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 15px;
+    row-gap: 5px;
+    color: #035D74;
+    font-weight: 600;
+    align-self: center;
+}
+
 
 
 
