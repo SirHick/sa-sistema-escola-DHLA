@@ -18,7 +18,7 @@ body{
 }
 
 
-header{
+#header-page{
     background: #035D74;
     width: 100vw;
     height: 6rem;
@@ -79,75 +79,124 @@ header nav a{
 }
 
 
-/* ESTILIZAÇÃO PARA A PÁGINA DOS PROFESSORES*/
-
-#main-functions{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    
-}
-
-.image-with-buttons{
-    background-color: #035D74;
-    border-radius:12px;
-    padding: 30px;
-    max-width: 30vw;
-    box-sizing: border-box;
-}
-
-.image-with-buttons img{
+.container {
+    background: #ffffff;
     width: 100%;
-    height: 25vh;
-    border-radius: 20px;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    justify-self: center;
+    margin-top: 20vh;
 }
 
-.image-with-buttons button{
-    background: #EDECEA;
-    border: none;
-    display: block;
-    margin-bottom: 3vh;
-    height: 5vh;
-    width: 100%;
-    border-radius: 8px;
+.header h1 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
 }
 
-#list-of-subjects{
-    background-color: #035D74;
-    border-radius:12px;
-    padding: 30px;
-    max-width: 30vw;
-    box-sizing: border-box;
-
+.header p {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
 }
 
-#list-of-subjects h2{
-    color:#EDECEA;
-    text-align: center;
-    font-size: 48px;
-}
-
-#list-of-subjects .subject{
+#form-materia {
     display: flex;
-    background-color: #EDECEA;
-    border-radius: 8px;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
     gap: 10px;
 }
 
-#list-of-subjects .subject img{
-    width: 100px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+.input-group input {
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
 }
 
-#list-of-subjects .subject-description{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap: 15px;
-    row-gap: 5px;
-    color: #035D74;
-    font-weight: 600;
-    align-self: center;
+#input-nome {
+    flex: 2;
+}
+
+#input-professor {
+    flex: 1;
+}
+
+#btn-adicionar {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+#btn-adicionar:hover {
+    background-color: #1d4ed8;
+}
+
+#lista-materias {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.item-materia {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-materia {
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.btn-remover {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+.btn-remover:hover {
+    background-color: #dc2626;
+}
+
+.rodape-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 2px solid #e2e8f0;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+#total-materias {
+    color: #16a34a;
+    font-size: 1.3rem;
 }
 
 

@@ -3,5 +3,25 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "mysql2": "^3.23.0"
-  }
+  },
+  "name": "sa-sistema-escola-dhl",
+  "version": "1.0.0",
+  "description": "Aqui será o repositório da SA do Peterson de Desenvolvimento de Sistemas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node back/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirHick/sa-sistema-escola-DHL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SirHick/sa-sistema-escola-DHL/issues"
+  },
+  "homepage": "https://github.com/SirHick/sa-sistema-escola-DHL#readme"
 }

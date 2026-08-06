@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-const connetion = mysql.createConnection({
+const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
@@ -8,7 +8,7 @@ const connetion = mysql.createConnection({
 
 });
 
-connetion.connect((erro) => {
+connection.connect((erro) => {
     if(erro){
         console.log('Erro ao conectar: ' , erro)
         return;
@@ -17,4 +17,4 @@ connetion.connect((erro) => {
 })
 
 //Serve para exportar a variavel connection
-module.exports = connetion;
+module.exports = connection;
