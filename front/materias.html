@@ -7,59 +7,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id = "header-page">
-
-        <a href="index.html"><h1>Escola DHL</h1></a>
-
-        <nav>
-            <a href="">Matérias</a>
-        </nav>
-    </header>
-
-
+    
+    
     <main class="container">
         <header class="header">
-            <h1>Lista de Matérias da Escola</h1>
+            <h1>Lista de Matérias da Escola DHLA</h1>
             <p>Lista com as matérias e os seus respectivos professores.</p>
         </header>
- 
-        <form id="form-materia">
-            <div class="input-group">
-                <input 
-                    type="text" 
-                    id="input-nome" 
-                    placeholder="Nome da matéria" 
-                    required
-                >
-                <input 
-                    type="text" 
-                    id="input-professor" 
-                    step="0.01" 
-                    placeholder="Nome do professor" 
-                    required
-                >
-            </div>
-            <button type="submit" id="btn-adicionar">Adicionar à Lista</button>
-        </form>
 
-        
-        <ul id="lista-materias">
-            
-        </ul>
+        <section class="painel-operacoes">
+            <form id="form-materia" class="form-operacao">
+                <div class="input-group">
+                    <input type="text" id="input-nome" placeholder="Nome da matéria" required>
+                    <input type="number" id="input-professor" min="1" placeholder="ID do professor" required>
+                </div>
+                <button type="submit" id="btn-adicionar">Adicionar à Lista</button>
+            </form>
 
-        
+            <form id="form-buscar" class="form-operacao">
+                <div class="input-group">
+                    <input type="number" id="input-buscar-id" min="1" placeholder="ID da matéria" required>
+                    <button type="submit" class="btn-secundario">Buscar por ID</button>
+                </div>
+            </form>
+
+            <form id="form-atualizar" class="form-operacao">
+                <div class="input-group">
+                    <input type="number" id="input-atualizar-id" min="1" placeholder="ID da matéria" required>
+                    <input type="text" id="input-nome-atualizar" placeholder="Novo nome da matéria" required>
+                    <input type="number" id="input-professor-atualizar" min="1" placeholder="ID do professor" required>
+                </div>
+                <button type="submit" class="btn-acao">Atualizar matéria</button>
+            </form>
+
+            <form id="form-excluir" class="form-operacao">
+                <div class="input-group">
+                    <input type="number" id="input-excluir-id" min="1" placeholder="ID da matéria" required>
+                    <button type="submit" class="btn-danger">Excluir matéria</button>
+                </div>
+            </form>
+        </section>
+
+        <div id="mensagem-operacao" class="mensagem-operacao" role="status" aria-live="polite"></div>
+
+        <ul id="lista-materias"></ul>
+
         <footer class="rodape-total">
             <span>Total de matérias:</span>
             <strong id="total-materias">0</strong>
         </footer>
     </main>
 
-
     <script src="script.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      mostrarMaterias();
-    });
-    </script>
 </body>
 </html>
