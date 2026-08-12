@@ -160,22 +160,8 @@ const excluirMateria = async (evento) => {
 
     <div id = "black-div"></div> */
 
-    let newButtonsDiv = document.createElement("div");
 
-    newButtonsDiv.classList.add("confirm-message");
-
-    newButtonsDiv.innerHTML = `
     
-        <p>Você tem certeza que deseja excluir esta matéria?</p>
-        
-        <div id = "div-buttons">
-            <button id = "yes-button">Sim</button>
-            <button id = "no-button">Não</button>
-        </div>`
-
-    let newBlackDiv = document.createElement("div");
-
-    newBlackDiv.classList.add("black-div");
 
 
     const id = inputExcluirId.value.trim();
@@ -185,7 +171,59 @@ const excluirMateria = async (evento) => {
     }
 
     try {
-        const response = await fetch(`${API_URL}/materias/${id}`, {
+        let newButtonsDiv = document.createElement("div");
+
+        newButtonsDiv.classList.add("confirm-message");
+
+        newButtonsDiv.innerHTML = `
+        
+            <p>Você tem certeza que deseja excluir esta matéria?</p>
+
+            <div id = "div-buttons">
+                <button id = "yes-button">Sim</button>
+                <button id = "no-button">Não</button>
+            </div>`
+
+        let newBlackDiv = document.createElement("div");
+
+        newBlackDiv.classList.add("black-div");
+
+        document.body.appendChild(newButtonsDiv);
+
+        document.body.appendChild(newBlackDiv);
+
+        let buttonDelete = document.getElementById("yes-button");
+
+        let buttonRejectDelete = document.getElementById("no-button");
+
+        buttonRejectDelete.addEventListener("click", () =>{
+            document.body.removeChild(newButtonsDiv);
+
+            document.body.removeChild(newBlackDiv);
+            
+            console.log("Operação rejeitada.")
+        })
+
+        buttonDelete.addEventListener("click", () => {
+            document.body.removeChild(newButtonsDiv);
+
+            document.body.removeChild(newBlackDiv);
+            
+            deletarMateria(inputExcluirId, id);
+        })
+
+        
+
+    } catch (erro) {
+        console.error(erro);
+        exibirMensagem(erro.message, "erro");
+    }
+};
+
+
+async function deletarMateria(inputExcluirId, id){
+
+    const response = await fetch(`${API_URL}/materias/${id}`, {
             method: "DELETE",
         });
 
@@ -195,14 +233,13 @@ const excluirMateria = async (evento) => {
             throw new Error(dados.erro || dados.mensagem || "Não foi possível excluir a matéria.");
         }
 
+        
+
         exibirMensagem(dados.mensagem || "Matéria excluída com sucesso.", "sucesso");
         inputExcluirId.value = "";
         await mostrarMaterias();
-    } catch (erro) {
-        console.error(erro);
-        exibirMensagem(erro.message, "erro");
-    }
-};
+
+}
 
 form.addEventListener("submit", addNewItem);
 formBuscar.addEventListener("submit", buscarMateriaPorId);

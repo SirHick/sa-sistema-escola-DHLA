@@ -212,6 +212,7 @@ body{
     color: white;
     border-style: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .confirm-message #no-button{
@@ -219,10 +220,11 @@ body{
     color: white;
     border-style: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 
-#black-div{
+.black-div{
     background: rgba(0, 0, 0, 0.404);
     width: 100vw;
     height: 100vh;
